@@ -1,2 +1,2 @@
-# Lykke-cafegarder
+# Lykke-Kaffegårdar
 Lykke cafegarder's technical data pipeline demonstration
