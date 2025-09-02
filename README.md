@@ -10,11 +10,9 @@ This report outlines how Lykke can address these challenges by adopting a lightw
 Our proposed approach balances immediate needs—simple, reliable insights to guide growth—with long-term scalability. By establishing unified KPI tracking, identifying high-potential markets and customer segments, and creating a foundation for data-informed decisions, Lykke can drive sustainable revenue growth while maintaining its mission: *to save the future of coffee and coffee farmers.*
 
 
-
-
 ## 2. Current Situation & Challenges
 
-### Current Systems Overview
+### 2.1 Current Systems Overview
 Lykke currently operates its e-commerce and business processes through a combination of specialized systems that each serve a distinct function. These systems are connected in varying degrees, and together they support sales, logistics, finance, and marketing operations.
 
 - **Shopify**: Central e-commerce platform for online sales, products, and customers.
@@ -70,7 +68,7 @@ Lykke needs to:
 
 ### 4.1 Evaluation of Strategic Options  
 
-**Enterprise Data Warehouse (Snowflake/dbt, etc.)**  
+#### Enterprise Data Warehouse (Snowflake/dbt, etc.)
 An enterprise data warehouse is a centralized platform designed to store, transform, and integrate very large and complex datasets from multiple systems. Tools like Snowflake and dbt enable companies to build robust pipelines, apply advanced transformations, and scale analytics as data volumes grow.  
 
 - **Benefits**:  
@@ -86,7 +84,7 @@ An enterprise data warehouse is a centralized platform designed to store, transf
 
 ---  
 
-**Lightweight Business Intelligence tool (Power BI, Looker Studio)**  
+#### Lightweight Business Intelligence tool (Power BI, Looker Studio)
 A lightweight BI approach connects directly to existing data sources (e.g., Shopify, Fortnox, GA4) without building a full warehouse. Power BI allows the creation of interactive dashboards, applying basic transformations and modeling within the tool itself.  
 
 - **Pros**:  
@@ -100,86 +98,75 @@ A lightweight BI approach connects directly to existing data sources (e.g., Shop
   - Limited history and depth of analysis compared to a warehouse.  
   - Scalability challenges: as Lykke grows and adds markets, dashboards will require oversight to ensure accuracy and consistency.  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
 
 ### 4.2 Most Suitable Approach for Lykke
-- Power BI as the right fit.  
-- Lykke’s challenge = **data consistency**, not massive data volume.  
-- Power BI provides a **pragmatic and scalable solution** for their context.  
+Given Lykke’s current stage and business model, Power BI is the most suitable solution to meet their analytics needs.
 
+Lykke’s main challenge is not handling massive volumes of data, but rather ensuring data consistency across markets, partners, and systems. A lightweight BI tool like Power BI addresses this challenge in a pragmatic way:
 
+- **Right-sized for Lykke’s data**: Even as Lykke expands to more markets, the underlying datasets (sales, products, customers, partners) remain relatively small compared to companies that require a full enterprise warehouse.
 
+- **Quick time-to-value**: Power BI can be implemented rapidly, enabling Lykke to begin monitoring KPIs, customer segments, and partner performance without the delays of building a complex data infrastructure.
 
+- **Supports growth and scale**: While simpler than a data warehouse, Power BI still offers the flexibility to connect to multiple systems (Shopify, Fortnox, GA4, etc.), manage data models, and expand dashboards as new markets come online.
 
+- **Practical governance**: Data consistency rules and oversight can be embedded into Power BI models, giving Lykke the reliability it needs without heavy engineering.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Power BI provides a scalable, cost-effective, and user-friendly approach that matches Lykke’s mission and growth ambitions. It balances today’s need for reliable, consistent data with the flexibility to grow as the business expands across Europe.
 
 ---
 
 ## 5. Power BI Implementation Considerations
 ### 5.1 How Power BI Works for Lykke
-- Connects to Shopify, Fortnox, GA4 (via APIs or exports).  
-- Imports data into its internal model.  
-- Provides one central dashboard where managers see all key metrics across markets.  
+Power BI will serve as the central platform for unifying Lykke’s fragmented data sources into one place. By connecting directly or via exports/APIs, it allows the team to monitor sales, customers, marketing, logistics, and finance in a consolidated view. Below is an overview of how each source connects and what type of insights it brings:
 
-### 5.2 Challenges of This Approach
-- Limited historical data retention (90 days).  
-- Data consistency issues with more local partners.  
-- Effort of scaling reporting (new setup per partner).  
+**E-commerce & Customer Data**
+- **Shopify**: Connects directly to Power BI through a native connector or via scheduled CSV/API exports. Provides key data on orders, customers, products, and revenue.
+- **Recharge** (subscriptions): Data is stored within Shopify orders but can also be accessed through Recharge’s API. Enables subscription-specific analysis, such as recurring revenue and churn.
 
-**Mitigation strategies:**  
-- Define consistency rules.  
-- Assign ownership of data checks.  
-- Use archiving to preserve historical snapshots.  
-- Consider third-party connectors (noting cost trade-offs).  
+**Payments & Finance**
+- **Payment Service Providers**: Transaction data can be imported via CSV exports or API connectors into Power BI. This makes it possible to track payment volumes, fees, and refund rates.
+- **Fortnox** (ERP for B2B): Finance and wholesale data can be accessed in two ways. 
+One is to connect direct to Power BI: possible via Fortnox API or third-party connectors, but requires ongoing setup and maintenance. The other option is via Actigate: already structures and consolidates Fortnox data into business-ready reports, reducing complexity.
+For Lykke, using Actigate as the middle layer is more practical, as it minimizes technical overhead while ensuring financial data is consistent and reliable.
+
+**Logistics & Fulfilment**
+- **Webshipper** (B2C shipping automation): Connects to Power BI through API or exports. Provides data on shipping lead times, carrier performance, and fulfillment efficiency.
+- **Freights** (PostNord, DHL): Shipment details are consolidated in Webshipper, so Power BI consumes these metrics indirectly.
+- **Linklog** (WMS): If still in use, stock and returns data can be added to Power BI through CSV exports or API feeds.
+
+**Marketing & Traffic**
+- **Google Analytics 4** (GA4): Connects via a native Power BI connector or through BigQuery/CSV exports. Brings in website traffic, conversion funnels, and acquisition insights.
+- **Klaviyo** (email/SMS automation): Data can be connected via API or exports into Power BI. This enables analysis of campaign performance, customer segmentation, and re-engagement metrics.
+
+
+#### *The role of Actigate
+Actigate plays a valuable role by simplifying access to Fortnox and potentially other systems. Instead of Power BI having to pull raw, unstructured accounting data from Fortnox, Actigate prepares and delivers clean, consolidated outputs. This reduces technical complexity and ensures Lykke’s finance insights are reliable, without requiring heavy data engineering resources.
+
+---
+
+### 5.2 Challenges and Mitigation Strategies
+
+#### Limited Historical Data Retention
+APIs such as Shopify typically provide only limited transaction history (often 90 days). Without intervention, this restricts Lykke’s ability to run longer-term analyses or compare performance across years. Lykke has two practical options to address this:
+
+- **Manual exports** (low-cost approach): Each month, a team member exports the relevant data (e.g., Shopify orders, Fortnox transactions, GA4 traffic) and saves the file in a shared Dropbox folder. Power BI can connect directly to Dropbox, automatically reading and stacking all new files into one historical dataset. This creates a reliable “data archive” without extra costs. The limitation is that the process depends on discipline — someone must remember to do the export each month.
+- **Connectors** (automated approach): Third-party connectors (e.g., Supermetrics, Stitch, Funnel.io) can automatically pull both historical and ongoing data into Power BI. This removes the risk of missed exports and keeps dashboards continuously up to date. However, connectors involve recurring subscription costs, so Lykke will need to weigh the benefit of automation against the additional expense.
+
+
+#### Data Consistency Across Local Partners
+As Lykke expands into new markets and adds more local partners, consistency across data fields becomes critical. Product codes, order categories, and financial reporting structures must be aligned to ensure reliable cross-market comparisons. Power BI will not automatically enforce this consistency — it requires Lykke to define clear rules and assign responsibility for checking and maintaining alignment.
+
+- **Set consistency rules**: Define clear standards for product codes, order categories, and reporting fields when onboarding new partners.
+- **Assign ownership**: Designate a team member responsible for regularly checking that exports are aligned and dashboards remain reliable.
+
+#### Scaling Reporting Across Partners
+Power BI is well suited to managing multiple markets, but each new partner requires setting up additional connections and may involve adjustments to the data model. This means that scaling reporting is less about technical automation and more about disciplined governance, ensuring that each new market follows the same data standards and processes.
+
+- **Document and standardize processes**: Ensure that onboarding new partners includes a checklist for reporting setup.
+- **Regular data checks**: Have the assigned data owner review dashboards when new partners are added, making sure KPIs remain comparable across markets.
+- **Consider connectors selectively**: For frequently used data sources, a connector may reduce effort by automating repetitive setup, even if this adds some cost.
 
 ---
 
