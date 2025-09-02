@@ -17,19 +17,26 @@ Our proposed approach balances immediate needs—simple, reliable insights to gu
 ### Current Systems Overview
 Lykke currently operates its e-commerce and business processes through a combination of specialized systems that each serve a distinct function. These systems are connected in varying degrees, and together they support sales, logistics, finance, and marketing operations.
 
-**Shopify** – The central e-commerce platform, managing online sales, products, customers, and orders. It is the core system through which all transactions are initiated.
+- **Shopify**: Central e-commerce platform for online sales, products, and customers.
 
-**Recharge (Shopify plugin)** – Handles subscription services (e.g., recurring coffee deliveries), integrated within Shopify so that subscription orders flow seamlessly into the order management system.
+- **Recharge** (Shopify plugin): Manages subscriptions, integrated with Shopify orders.
 
-**Payment Service Providers** (Stripe, Klarna, PayPal, etc.) – Process all customer payments at checkout, including handling fees, refunds, and payouts. These connect directly to Shopify and are essential for financial reconciliation.
+- **Payment Service Providers** (Stripe, Klarna, PayPal, etc.): Process customer payments, fees, and refunds.
 
-**Linklog** (Warehouse Management System) – Manages inventory, picking, packing, and fulfillment. Receives order data from Shopify and passes delivery details to shipping partners.
+- **Fortnox** (B2B): ERP/accounting system for wholesale operations (invoices, customer accounts). Data flows into Actigate for reporting.
 
-**Freights** (Shipping carriers such as PostNord, DHL, Budbee) – Deliver customer orders. They receive instructions from Linklog and provide tracking information back to the system.
+- **Actigate**: Business intelligence and integration layer, pulling data from Fortnox and providing consolidated financial/operational insights.
 
-**Fortnox** – The accounting and ERP system, consolidating financial data from Shopify and the PSPs to manage bookkeeping, invoicing, and compliance.
+- **Webshipper** (B2C): Shipping automation system for consumer orders. Connects Shopify to freight carriers for fulfillment and tracking.
 
-**GA4 (Google Analytics)** – Tracks customer behavior and marketing performance on Lykke’s e-commerce site, providing insights into traffic sources, conversion funnels, and campaign effectiveness.
+- **Freights** (PostNord, DHL): Shipping carriers that deliver orders to customers, receiving instructions from Webshipper.
+
+- **Linklog** (WMS): Warehouse Management System (if still used alongside Webshipper, likely for stock/returns).
+
+- **GA4** (Google Analytics): Tracks marketing performance, customer traffic, and site behavior.
+
+- **Klaviyo** (Shopify app): Marketing automation tool for email/SMS, customer segmentation, and campaign performance.
+
 
 In practice, these systems work together as follows: Shopify acts as the central hub, connecting to subscription services (Recharge), payment processing (PSPs), logistics (Linklog and Freights), finance (Fortnox), and analytics (GA4). Currently, insights are often accessed through the individual dashboards of each tool or via manual exports.  
 
