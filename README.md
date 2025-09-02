@@ -47,22 +47,32 @@ At present, the complexity is further increased by the fact that each local part
 ### 2.2 Challenges  
 The current setup presents several challenges for Lykke’s growth ambitions:  
 
-- **Fragmented data** – Information is spread across Shopify, Recharge, PSPs, Linklog, Fortnox, GA4, and local partner systems. Without integration, analysis requires manual consolidation, which is time-consuming and error-prone.  
-- **Lack of unified KPIs across markets** – Each system provides metrics, but they are not standardized or easily comparable across geographies and partners. This makes it difficult to answer strategic questions such as which products, markets, or customer segments drive the most value.  
-- **Limited visibility for decision-making** – Because insights are siloed within individual tools, management lacks a holistic view of performance. This hampers the ability to identify growth levers, monitor efficiency, and proactively address issues as the business scales.  
+- **Fragmented data**: Information is spread across Shopify, Recharge, PSPs, Linklog, Fortnox, GA4, and local partner systems. Without integration, analysis requires manual consolidation, which is time-consuming and error-prone.  
+- **Lack of unified KPIs across markets**: Each system provides metrics, but they are not standardized or easily comparable across geographies and partners. This makes it difficult to answer strategic questions such as which products, markets, or customer segments drive the most value.  
+- **Limited visibility for decision-making**: Because insights are siloed within individual tools, management lacks a holistic view of performance. This hampers the ability to identify growth levers, monitor efficiency, and proactively address issues as the business scales.  
 
 *Together, these challenges highlight the need for a more unified and scalable analytics approach, one that enables Lykke to consistently track performance and make data-informed decisions across all markets.*
 
----
 
 ## 3. Business Needs
-Lykke needs to:
-- Track **core KPIs** (sales, customer segments, inventory, partner performance).
-- Identify **growth levers** (which markets, which products, which customers).  
-  *(Team 7 & 15’s contributions here)*  
-- Build **simple but reliable dashboards** for ongoing decision-making.
+To accelerate its B2C e-commerce growth, Lykke requires a clear framework for **core KPI tracking**. Four metrics stand out as the most strategic for monitoring business performance:
 
----
+- **Acquisition / Growth:** *New Customers per Month* — measures expansion of the customer base.  
+- **Retention / Loyalty:** *Customer Retention Rate (CRR)* — signals the ability to build lasting relationships and repeat purchases.  
+- **Profitability (Sustainability):** *CLV/CAC Ratio* — ensures that the value of customers outweighs acquisition costs.  
+- **Profitability (Unit Economics):** *Contribution Margin (%)* — shows whether each sale contributes positively after product, marketing, and variable costs.  
+
+Alongside these core KPIs, Lykke will also benefit from **supporting metrics** (e.g. Average Order Value, Conversion Rate, Purchase Frequency, Gross Margin, NPS) which serve as diagnostic levers. These are not core because they do not, on their own, capture business success; instead, they help explain *why* core KPIs improve or decline.  
+
+In addition, Lykke needs to identify its **growth levers**:
+- **Markets**: which geographies show highest potential for profitable expansion.  
+- **Products**: which SKUs drive retention, higher AOV, and loyalty.  
+- **Customers**: which segments deliver the highest CLV, and which can be reactivated or nurtured.  
+
+Finally, success will depend on building **simple but reliable dashboards** that translate these KPIs into clear insights for ongoing decision-making. Dashboards should allow management and local partners to quickly assess performance, compare markets, and act without requiring deep analytical expertise.
+
+
+
 
 ## 4. Recommended Analytics Approach  
 
@@ -154,7 +164,6 @@ APIs such as Shopify typically provide only limited transaction history (often 9
 - **Manual exports** (low-cost approach): Each month, a team member exports the relevant data (e.g., Shopify orders, Fortnox transactions, GA4 traffic) and saves the file in a shared Dropbox folder. Power BI can connect directly to Dropbox, automatically reading and stacking all new files into one historical dataset. This creates a reliable “data archive” without extra costs. The limitation is that the process depends on discipline — someone must remember to do the export each month.
 - **Connectors** (automated approach): Third-party connectors (e.g., Supermetrics, Stitch, Funnel.io) can automatically pull both historical and ongoing data into Power BI. This removes the risk of missed exports and keeps dashboards continuously up to date. However, connectors involve recurring subscription costs, so Lykke will need to weigh the benefit of automation against the additional expense.
 
-
 #### Data Consistency Across Local Partners
 As Lykke expands into new markets and adds more local partners, consistency across data fields becomes critical. Product codes, order categories, and financial reporting structures must be aligned to ensure reliable cross-market comparisons. Power BI will not automatically enforce this consistency — it requires Lykke to define clear rules and assign responsibility for checking and maintaining alignment.
 
@@ -197,6 +206,61 @@ Power BI is well suited to managing multiple markets, but each new partner requi
 
 ----------------------------------------------------------------------------------------
 
+## Appendix – KPI Framework and Thought Process
+
+### 1. Objectives and Sub-objectives
+
+To align Lykke’s e-commerce strategy with measurable outcomes, we structured the analysis around three main objectives and their sub-objectives:
+
+- **Acquisition / Growth** → Expand the customer base through efficient marketing.
+- **Retention / Loyalty** → Strengthen customer relationships and repeat purchases.
+- **Profitability** → Ensure sustainable unit economics and long-term business health.
+
+---
+
+### 2. Core and Supporting KPIs
+
+#### Acquisition / Growth
+- **Core KPI**
+  - **New Customers per Month** → Direct measure of customer base expansion.
+- **Supporting KPIs**
+  - Website Traffic → Indicates reach but does not prove customer growth.
+  - Conversion Rate → Explains efficiency of the acquisition funnel.
+  - CAC (Customer Acquisition Cost) → Already captured indirectly in CLV/CAC ratio.
+  - CTR on Ads/Email → Tactical marketing diagnostic, not strategic.
+
+---
+
+#### Retention / Loyalty
+- **Core KPI**
+  - **Customer Retention Rate (CRR)** → Captures long-term loyalty and repeat engagement.
+- **Supporting KPIs**
+  - Repeat Purchase Rate → Narrower view than CRR (focuses only on 2+ orders).
+  - Purchase Frequency → Helps explain shifts in CLV.
+  - NPS / CSAT → Subjective leading indicators, not direct proof of revenue.
+  - Engagement Metrics (e.g., email open rates) → Operational rather than strategic.
+
+---
+
+#### Profitability
+- **Core KPIs**
+  - **CLV/CAC Ratio** → Ensures customer lifetime value exceeds acquisition cost.
+  - **Contribution Margin (%)** → Validates unit-level profitability after product, marketing, and variable costs.
+- **Supporting KPIs**
+  - AOV (Average Order Value) → Driver of CLV and margin, but insufficient on its own.
+  - Gross Margin (%) → Too partial, excludes marketing and shipping costs.
+  - EBITDA / Operating Profit Margin → Relevant at later stages; less actionable in early growth.
+  - Cash Burn / Runway → Critical for financing decisions, not day-to-day operations.
+
+---
+
+## 3. Summary
+
+- **Core KPIs** answer the question: *“Are we winning?”*
+- **Supporting KPIs** clarify: *“Why are we winning or losing?”*
+- **Operational metrics** provide the tactical levers to act on findings.
+
+This layered framework ensures that Lykke focuses on the most critical indicators of e-commerce growth and profitability, while maintaining the diagnostic tools needed for decision-making and continuous improvement.
 
 
 
