@@ -62,15 +62,22 @@ To accelerate its B2C e-commerce growth, Lykke requires a clear framework for **
 - **Profitability (Sustainability):** *CLV/CAC Ratio* — ensures that the value of customers outweighs acquisition costs.  
 - **Profitability (Unit Economics):** *Contribution Margin (%)* — shows whether each sale contributes positively after product, marketing, and variable costs.  
 
-Alongside these core KPIs, Lykke will also benefit from **supporting metrics** (e.g. Average Order Value, Conversion Rate, Purchase Frequency, Gross Margin, NPS) which serve as diagnostic levers. These are not core because they do not, on their own, capture business success; instead, they help explain *why* core KPIs improve or decline.  
+Alongside these core KPIs, Lykke will also benefit from supporting metrics (e.g. Average Order Value, Conversion Rate, Purchase Frequency, Gross Margin, NPS) which serve as diagnostic levers. These are not core because they do not, on their own, capture business success; instead, they help explain *why* core KPIs improve or decline.  
 
 In addition, Lykke needs to identify its **growth levers**:
 - **Markets**: which geographies show highest potential for profitable expansion.  
 - **Products**: which SKUs drive retention, higher AOV, and loyalty.  
 - **Customers**: which segments deliver the highest CLV, and which can be reactivated or nurtured.  
 
-Finally, success will depend on building **simple but reliable dashboards** that translate these KPIs into clear insights for ongoing decision-making. Dashboards should allow management and local partners to quickly assess performance, compare markets, and act without requiring deep analytical expertise.
+Finally, success will depend on building simple but reliable dashboards that translate these KPIs into clear insights for ongoing decision-making. These dashboards should enable management to monitor overall performance at a glance, while also allowing segmentation by market and partner.  
 
+Since Lykke will operate one central e-commerce site but handle fulfillment locally through partners, dashboards must show both global totals and partner-level breakdowns. This ensures that growth in one market does not hide underperformance in another, and that commission-based payouts remain fair and transparent.  
+
+The recommended setup is therefore:  
+- **Executive Dashboard**: One main view anchored on the four core KPIs (New Customers, CRR, CLV/CAC, Contribution Margin), with global totals at the top and partner/market comparisons beneath.  
+- **Supporting Dashboards**: Objective-specific panels (Acquisition, Retention, Profitability, Customer Segmentation) that provide diagnostic detail and can be filtered by market.  
+
+This approach gives Lykke a scalable and transparent system: one website, one dashboard structure, but insights that serve both global decision-making and local partner accountability.
 
 
 
