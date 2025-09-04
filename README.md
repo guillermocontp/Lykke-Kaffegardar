@@ -186,7 +186,7 @@ Power BI is well suited to managing multiple markets, but each new partner requi
 
 ---
 
-## 6. Roadmap
+## 6. Roadmap (to do)
 **Short-term (0–3 months):**  
 - Build a prototype dashboard in Power BI with Shopify & Fortnox data.  
 - Agree on core KPIs.  
@@ -204,7 +204,7 @@ Power BI is well suited to managing multiple markets, but each new partner requi
 
 ---
 
-## 7. Conclusion & Next Steps
+## 7. Conclusion & Next Steps (to do)
 - Clear summary of findings.  
 - Expected business impact.  
 - Suggested next steps for Lykke.  
@@ -261,7 +261,7 @@ To align Lykke’s e-commerce strategy with measurable outcomes, we structured t
 
 ---
 
-## 3. Summary
+#### Summary
 
 - **Core KPIs** answer the question: *“Are we winning?”*
 - **Supporting KPIs** clarify: *“Why are we winning or losing?”*
