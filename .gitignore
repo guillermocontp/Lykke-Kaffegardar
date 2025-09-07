@@ -1,0 +1,10 @@
+# Ignore data folder (Lykke datasets)
+data/
+*.csv
+*.xlsx
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Mac system files
+.DS_Store

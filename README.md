@@ -184,9 +184,10 @@ Power BI is well suited to managing multiple markets, but each new partner requi
 - **Regular data checks**: Have the assigned data owner review dashboards when new partners are added, making sure KPIs remain comparable across markets.
 - **Consider connectors selectively**: For frequently used data sources, a connector may reduce effort by automating repetitive setup, even if this adds some cost.
 
+
 ---
 
-## 6. Roadmap
+## 6. Roadmap (to do)
 **Short-term (0–3 months):**  
 - Build a prototype dashboard in Power BI with Shopify & Fortnox data.  
 - Agree on core KPIs.  
@@ -204,7 +205,7 @@ Power BI is well suited to managing multiple markets, but each new partner requi
 
 ---
 
-## 7. Conclusion & Next Steps
+## 7. Conclusion & Next Steps (to do)
 - Clear summary of findings.  
 - Expected business impact.  
 - Suggested next steps for Lykke.  
@@ -213,7 +214,7 @@ Power BI is well suited to managing multiple markets, but each new partner requi
 
 ----------------------------------------------------------------------------------------
 
-## Appendix – KPI Framework and Thought Process
+## Appendix 1 – KPI Framework for Lykke B2C E-commerce
 
 ### 1. Objectives and Sub-objectives
 
@@ -227,49 +228,102 @@ To align Lykke’s e-commerce strategy with measurable outcomes, we structured t
 
 ### 2. Core and Supporting KPIs
 
-#### Acquisition / Growth
+#### ACQUISITION / GROWTH
 - **Core KPI**
   - **New Customers per Month** → Direct measure of customer base expansion.
 - **Supporting KPIs**
   - Website Traffic → Indicates reach but does not prove customer growth.
   - Conversion Rate → Explains efficiency of the acquisition funnel.
-  - CAC (Customer Acquisition Cost) → Already captured indirectly in CLV/CAC ratio.
+  - Add-to-Cart Rate → Shows how effectively product pages generate buying intent.
+  - Cart Abandonment Rate → Diagnoses checkout friction or price sensitivity.
   - CTR on Ads/Email → Tactical marketing diagnostic, not strategic.
 
 ---
 
-#### Retention / Loyalty
+#### RETENTION / LOYALTY
 - **Core KPI**
   - **Customer Retention Rate (CRR)** → Captures long-term loyalty and repeat engagement.
 - **Supporting KPIs**
   - Repeat Purchase Rate → Narrower view than CRR (focuses only on 2+ orders).
   - Purchase Frequency → Helps explain shifts in CLV.
+  - Return Rate → Explains potential dissatisfaction and impacts contribution margin.
   - NPS / CSAT → Subjective leading indicators, not direct proof of revenue.
   - Engagement Metrics (e.g., email open rates) → Operational rather than strategic.
 
 ---
 
-#### Profitability
+#### PROFITABILITY
 - **Core KPIs**
   - **CLV/CAC Ratio** → Ensures customer lifetime value exceeds acquisition cost.
   - **Contribution Margin (%)** → Validates unit-level profitability after product, marketing, and variable costs.
 - **Supporting KPIs**
   - AOV (Average Order Value) → Driver of CLV and margin, but insufficient on its own.
   - Gross Margin (%) → Too partial, excludes marketing and shipping costs.
+  - Discount Rate → Helps explain changes in AOV and profitability.
   - EBITDA / Operating Profit Margin → Relevant at later stages; less actionable in early growth.
   - Cash Burn / Runway → Critical for financing decisions, not day-to-day operations.
 
 ---
 
-## 3. Summary
+#### SUMMARY
 
-- **Core KPIs** answer the question: *“Are we winning?”*
-- **Supporting KPIs** clarify: *“Why are we winning or losing?”*
-- **Operational metrics** provide the tactical levers to act on findings.
+- **Core KPIs** answer the question: *“Are we succeeding?”*
+- **Supporting KPIs** clarify: *“What is driving our success or setbacks?”*
 
 This layered framework ensures that Lykke focuses on the most critical indicators of e-commerce growth and profitability, while maintaining the diagnostic tools needed for decision-making and continuous improvement.
 
 
+## Appendix 2 – How to track the KPIs
+
+To track and grow Lykke’s B2C e-commerce performance, we distinguish between two categories of KPIs.  
+First, the **core KPIs** represent the most strategic measures of success and directly connect to Lykke’s growth objectives in B2C.  
+Second, the **supporting KPIs** act as diagnostic levers that explain why the core KPIs improve or decline, helping identify the underlying drivers of change.  
+
+
+### Core KPIs
+
+| **KPI** | Type | Data source | Columns needed | Available in existing datasets? | Why relevant |
+|---------|------|-------------|----------------|---------------------------------|--------------|
+| **New Customers per Month** | Core – Acquisition | Shopify (Orders_data_LTM + Shopify sessions) | `customer_id`, `order_date` (derive `first_order_date` by `MIN(order_date)` per `customer_id`), `sessions` | Yes | Direct measure of B2C customer base expansion; primary growth signal. |
+| **Customer Retention Rate (CRR)** | Core – Loyalty | Shopify (Orders_data_LTM) + Recharge | Shopify: `customer_id`, all `order_date`s to track repurchase windows; Recharge: `subscription_id`, `status`, `start_date`, `end_date` | Yes | Shows ability to keep customers buying; key to sustainable growth. |
+| **CLV / CAC Ratio** | Core – Profitability | Shopify (Orders_data_LTM) + Recharge + Ads/Klaviyo | **CLV:** `customer_id`, `order_total`/`subtotal`, order cadence; Recharge recurring revenue & tenure. **CAC:** marketing `spend` and `new_customers_acquired` by campaign/channel | Partial (needs ad spend) | Ensures lifetime value exceeds acquisition cost so growth is economically viable. |
+| **Contribution Margin %** | Core – Profitability | Shopify (Orders_data_LTM) + Linklog + PSPs (+ internal product cost per SKU) | `revenue`, `discounts`, per-order `shipping_cost` (Linklog/Webshipper), `psp_fee` (Stripe/Klarna/PayPal), `COGS_per_SKU` | Partial (needs shipping/fees/COGS detail) | Validates unit economics; scaling only makes sense if each order is contribution-positive. |
+
+---
+
+### Supporting KPIs
+
+| **KPI** | Type | Data source | Columns needed | Available in existing datasets? | Why relevant |
+|---------|------|-------------|----------------|---------------------------------|--------------|
+| **Website Traffic** | Supporting – Acquisition | Shopify sessions (GA4 if connected) | `sessions`, `source/medium` (channel attribution) | Yes (Shopify); GA4 optional | Explains reach; contextualizes new customers and conversion rate. |
+| **Conversion Rate (visitor → buyer)** | Supporting – Acquisition | Shopify sessions + Orders_data_LTM | `sessions`, `orders` | Yes | Explains funnel efficiency from traffic to orders. |
+| **Add-to-Cart Rate** | Supporting – Acquisition | Shopify (cart events) or GA4 (ecommerce events) | `sessions`, `add_to_cart` events (or `items_added_to_cart`) | Partial (depends on event tracking in extracts) | Early funnel efficiency; indicates product interest before checkout. |
+| **Cart Abandonment Rate** | Supporting – Acquisition | Shopify checkout/cart data | `carts_created`, `checkouts`, `orders_placed` (or `abandoned_checkouts`) | Partial (needs cart/checkout events) | Diagnoses checkout friction/price sensitivity impacting conversion. |
+| **CAC (Customer Acquisition Cost)** | Supporting – Acquisition/Profitability | Ads platforms (Meta/Google) + Klaviyo | `spend` by channel/campaign, `new_customers_acquired` | No | Driver of CLV/CAC ratio; reveals whether ratio changes are cost- or value-driven. |
+| **Repeat Purchase Rate** | Supporting – Loyalty | Shopify (Orders_data_LTM) | `customer_id`, order counts per period | Yes | Simplified loyalty metric; explains movements in CRR. |
+| **Purchase Frequency** | Supporting – Loyalty | Shopify (Orders_data_LTM) | `customer_id`, `order_date` (compute orders per customer per period) | Yes | Core driver of CLV alongside AOV. |
+| **Return Rate** | Supporting – Loyalty/Profitability | Linklog (logistics/returns) | `returns`, `shipments` (optionally `return_reason`) | Yes | Impacts contribution margin and satisfaction; high returns depress profitability. |
+| **Discount Rate** | Supporting – Profitability | Produkt_export + Orders_data_LTM | `Compare At Price`, `Price`, `discount_code`/`discount_amount` | Yes | Heavy discounting may lift conversion but compress AOV/margins. |
+| **AOV (Average Order Value)** | Supporting – Profitability | Shopify (Orders_data_LTM) | `order_id`, `order_total`/`subtotal` | Yes | Direct lever for CLV and unit economics. |
+| **Gross Margin % (per product/order)** | Supporting – Profitability | Shopify (Orders_data_LTM) + internal product costs | `revenue`, `COGS_per_SKU` | Partial (needs cost file) | Important profitability driver; incomplete without shipping/marketing. |
+| **Email Engagement (open/click)** | Supporting – Loyalty | Klaviyo | `open_rate`, `click_rate`, `campaign_id` | No | Leading indicator for retention; helps optimize lifecycle campaigns. |
+| **NPS / CSAT** | Supporting – Loyalty | Surveys/CRM | survey responses, `score`, `timestamp` | No | Predicts churn/retention; complements behavioral metrics. |
+
+
+---
+
+### Extra KPIs (acknowledged but not prioritized)
+
+Finally, we also acknowledge a set of **extra KPIs**: these are metrics that appear in the datasets and can be calculated, but they are not identified as strategically relevant for growth at this stage. They are included for completeness, in case they become useful for future analysis or operational monitoring.
+
+| **KPI** | Type | Data source | Columns needed | Available in existing datasets? | Why relevant |
+|---------|------|-------------|----------------|---------------------------------|--------------|
+| **Product Breadth (# SKUs)** | Extra – Operational/Diagnostic | Produkt_export_Aug_2025 | distinct `Handle` (SKU) | Yes | Assortment size; helpful context, not a growth driver by itself. |
+| **Product Availability Rate** | Extra – Operational/Diagnostic | Produkt_export_Aug_2025 | `Variant Inventory Qty` > 0 per SKU | Yes | Stock health indicator; indirectly affects conversion/retention. |
+| **Average Product Price** | Extra – Operational/Diagnostic | Produkt_export_Aug_2025 | `Variant Price` | Yes | Price positioning context; informs discounting strategy. |
+| **On-Time Delivery Rate** | Extra – Operational/Diagnostic | Linklog | `ship_date`, `expected_delivery_date` (or SLA date) | Yes | Service quality signal; supports retention but is a step removed from core KPIs. |
+| **Subscription Mix (% of revenue)** | Extra – Diagnostic | Orders_data_LTM + Recharge | order/subscription flag, subscription revenue by period | Partial (needs clear mapping) | Context on revenue resilience from recurring vs one-time. |
+| **Channel CAC (by channel)** | Extra – Diagnostic (granular) | Ads platforms + Klaviyo | `spend` by channel, `new_customers_acquired` by channel | No | Granular optimization once high-level CAC is established. |
 
 
 
@@ -308,46 +362,11 @@ This layered framework ensures that Lykke focuses on the most critical indicator
 
 
 
-----------------------------------------------------------------------------------------
-
-# Basic Markdown Formatting
-
-# Title (H1)
-## Section (H2)
-### Subsection (H3)
-#### Sub-subsection (H4)
-
-*italic*   or   _italic_
-**bold**   or   __bold__
-~~strikethrough~~
-
-- Bullet point
-- Another one
-  - Nested bullet
-
-1. Numbered list
-2. Second item
-   1. Sub-item
-
-[Link text](https://example.com)
-![Alt text for image](path_or_url_to_image)
-
-### Tables
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Row 1    | Data     | More     |
-| Row 2    | Data     | More     |
-
-### Code blocks
-`inline code`
-
-```python
-# multi-line code block
-print("Hello World")
 
 
-**Blockquotes (for highlighting quotes/insights):**
-```md
-> This is a highlighted quote or note.
+
+
+
+
 
 
