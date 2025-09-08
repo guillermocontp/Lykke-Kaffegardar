@@ -55,26 +55,148 @@ The current setup presents several challenges for Lykke’s growth ambitions:
 
 
 ## 3. Business Needs
-To accelerate its B2C e-commerce growth, Lykke requires a clear framework for **core KPI tracking**. Four metrics stand out as the most strategic for monitoring business performance:
 
-- **Acquisition / Growth:** *New Customers per Month* — measures expansion of the customer base.  
-- **Retention / Loyalty:** *Customer Retention Rate (CRR)* — signals the ability to build lasting relationships and repeat purchases.  
-- **Profitability (Sustainability):** *CLV/CAC Ratio* — ensures that the value of customers outweighs acquisition costs.  
-- **Profitability (Unit Economics):** *Contribution Margin (%)* — shows whether each sale contributes positively after product, marketing, and variable costs.  
-
-Alongside these core KPIs, Lykke will also benefit from supporting metrics (e.g. Average Order Value, Conversion Rate, Purchase Frequency, Gross Margin, NPS) which serve as diagnostic levers. These are not core because they do not, on their own, capture business success; instead, they help explain *why* core KPIs improve or decline.  
-
-In addition, Lykke needs to identify its **growth levers**:
-- **Markets**: which geographies show highest potential for profitable expansion.  
-- **Products**: which SKUs drive retention, higher AOV, and loyalty.  
-- **Customers**: which segments deliver the highest CLV, and which can be reactivated or nurtured.  
-
-Finally, success will depend on building simple but reliable dashboards that translate these KPIs into clear insights for ongoing decision-making. These dashboards should enable management to monitor overall performance at a glance, while also allowing segmentation by market and partner.  
-
-Since Lykke will operate one central e-commerce site but handle fulfillment locally through partners, dashboards must show both global totals and partner-level breakdowns. This ensures that growth in one market does not hide underperformance in another, and that commission-based payouts remain fair and transparent.  
+To guide Lykke's expansion, we need a clear set of strategic KPIs to act as our North Star. But before we define that ultimate destination, we must first map out our starting point. Every successful growth strategy is built on a solid data foundation, so our "data journey" will begin by exploring the powerful insights we can unlock right now. We'll start by using the tools and data you already have—your Shopify order history and Fortnox financial records—to build a foundational understanding of the business. By first mastering what this data tells us, we can then build a clear and actionable path toward the high-level metrics that will truly drive your growth.
 
 
-### 3.1 Core KPIs
+### 3.1 The Journey from Operational Metrics to Strategic Growth
+
+Right now, with your Fortnox data, you have a powerful lens into the daily health of your business. This is the first and most critical step. Think of it as knowing how to sail your ship day-to-day.
+
+#### **Phase 1: What We Can Track Today**
+
+From this file, you can immediately pull essential operational KPIs. These are your foundational metrics, your ship's instruments that tell you your current speed and heading:
+
+* **Sales by Units (`Summa_Enheter`):** You can see which coffee—like the "Uganda UFO 250g"—is flying off the shelves. This is perfect for managing inventory and knowing what's popular.
+* **Gross Profit Margin:** By calculating `(TB / Summa_SEK_inkl_rabatt) * 100`, you know how much profit you make on the coffee beans themselves after their direct cost. It answers the question: "Is our pricing correct for the product?"
+* **Top Products by Revenue (`Summa_SEK_inkl_rabatt`):** This shows you which products are bringing in the most money. It’s a great way to identify your star performers at a glance.
+
+These KPIs are vital. They help you answer the question: **"How are we doing right now?"**
+
+But as you grow, a more important question emerges: **"Where should we invest our time and money to grow faster and more profitably?"** This is where the limitations of these initial KPIs start to show.
+
+#### **Phase 2: The Strategic Shift - Why Contribution Margin % is Your North Star**
+
+Imagine this scenario: Your data shows the "Uganda UFO 250g" is your #1 seller by both units and revenue. The obvious conclusion would be to pour all your marketing budget into promoting it, right?
+
+**This is where the story gets interesting.**
+
+Let's say you also sell "Lykke Coffee Capsules." They are #5 in sales volume. However, these capsules are almost exclusively sold through your website to high-value subscription customers who discovered you via a low-cost organic search. The Uganda beans, on the other hand, sell well because you run expensive pay-per-click ads for them on Google.
+
+The operational KPIs don't see this hidden context. They see volume and revenue, but they don't see the **cost of acquiring that revenue.**
+
+This is the exact problem that the **Contribution Margin %** is designed to solve.
+
+**Contribution Margin %** tells you what percentage of revenue from a sale is left over to cover all your *fixed* costs—rent, salaries, insurance, warehouse costs—and then generate profit.
+
+It shifts the question from "What sells the most?" to **"What sale contributes the most to keeping the lights on and growing the business?"**
+
+#### **Phase 3: Putting it into Practice for Growth**
+
+To make this KPI your strategic guide, you need to start connecting your data sources. You have the sales and COGS data in your Fortnox file. The next step is to enrich it:
+
+1.  **Pull in Channel Data:** Your Shopify or Google Analytics data will tell you *how* a customer bought a product. Was it from a costly paid ad, or a "free" organic search?
+2.  **Add Channel Costs:** Assign variable costs to each channel. For example, factor in the advertising spend for products sold via Google Ads, or the sales commission for a wholesale deal. These are costs directly tied to making that sale happen.
+
+Now, you can calculate a much more powerful, strategic Contribution Margin.
+
+Let's revisit our example with this new, enriched data (**This is an ilustrative example**):
+
+* **Uganda UFO 250g (Sold via Paid Ads):**
+    * Revenue: 120 SEK
+    * COGS: -70 SEK
+    * Ad Cost per bag: -25 SEK
+    * **True Contribution Margin: 25 SEK (or 20.8%)**
+
+* **Lykke Coffee Capsules (Sold via Organic Search):**
+    * Revenue: 80 SEK
+    * COGS: -45 SEK
+    * Ad Cost per bag: -0 SEK
+    * **True Contribution Margin: 35 SEK (or 43.7%)**
+
+**The Revelation:**
+
+Suddenly, the "Lykke Capsules" are revealed to be the true engine of your profitability. For every krona of revenue from the capsules, you get to keep **43.7%** to pay your fixed costs. For the best-selling Uganda beans, you only keep **20.8%**.
+
+This single insight changes your entire growth strategy. Instead of just pushing your top-seller, you now know that the most strategic way to grow is to:
+* Invest in SEO to attract more organic customers for your capsules.
+* Create a subscription service to increase the lifetime value of these high-margin customers.
+* Look for other "hidden gem" products that are highly profitable, even if they aren't your top sellers by volume.
+
+By evolving from tracking Gross Margin to a strategic **Contribution Margin %**, you move from simply operating your business to actively and intelligently engineering its growth. You start making decisions based not on what is popular, but on what is truly profitable.
+
+
+
+
+
+### 3.2 The Journey from Sales Metrics to a Profit-Driven Strategy
+
+Your consolidated Ordesrs data file is the pulse of your e-commerce store. It captures every customer interaction, every product sold, and every discount claimed. This is the frontline of your business, and it provides the first layer of critical insights.
+
+#### **Phase 1: What We Can Track Today (The Customer's Viewpoint)**
+
+From this single file, you can understand your business from the customer's perspective. You can answer crucial questions about sales and marketing effectiveness:
+
+  * **What are our Top-Selling Products?** By summing the `Lineitem quantity` for each `Lineitem name`, you can see exactly which coffee beans or capsules your customers love the most.
+  * **What is our Average Order Value (AOV)?** By taking the average of the `Total` column for each unique order (`Name`), you can track how much the typical customer spends in one transaction.
+  * **How Effective Are Our Discounts?** By analyzing the `Discount Code` and `Discount Amount` columns, you can see which promotions are most popular and how much revenue you are giving up to drive those sales.
+
+These KPIs are essential. They tell you what's happening on your website and help you answer the question: **"What are our customers buying and why?"**
+
+But as you scale, this view is incomplete. A best-selling product driven by a steep discount might be a "vanity metric"—it looks good on the surface but could be hurting your ability to grow profitably.
+
+#### **Phase 2: The Strategic Shift – The Missing Piece of the Puzzle**
+
+Imagine this common scenario: You run a "20% Off" promotion using the `Discount Code` "SUMMERDEAL". Your `Orders Data` file shows a massive spike in sales for your "UFO 250g coffee". You sell 500 bags in one weekend. It looks like a huge success.
+
+The immediate conclusion is to run more 20% off promotions.
+
+But this file, on its own, is missing the most critical piece of financial information: **the cost of the coffee beans themselves.** It can tell you what you *sold*, but it can't tell you what you *earned*. Did that 20% discount wipe out your entire profit margin, or just a small piece of it?
+
+To make strategic decisions that lead to sustainable growth, you must answer the question: **"Which sales are actually funding our growth, and which are just covering costs?"**
+
+#### **Phase 3: Putting it into Practice – Connecting Your Data for True Profit Insight**
+
+This is where you combine your two data sources—the `Orders Data` file and the `Article data fortnox` file—to create a single, powerful source of truth. The key that links them together is the `Lineitem sku` from your orders file and the corresponding product identifier in your financial data.
+
+By connecting these files, you can calculate the true **Contribution Margin** for *every single product sold in every single order*. (**The numbers written here are not taken from the data file and are only used for this example!**)
+
+Let's revisit our "SUMMERDEAL" scenario with this new, connected data:
+
+1.  **Find the Sale:** In your `Orders Data`, you see a line item: "UFO 250g coffee", `Lineitem price`: 109.75 SEK, with a 20% discount, making the net price **87.80 SEK**.
+2.  **Find the Cost:** You look up the `Lineitem sku` ("WEB035") in your `Article data fortnox` file and find its `COGS_Per_Enhet` (Cost of Goods Sold Per Unit) is **91.92 SEK**.
+3.  **Calculate the True Contribution:** 
+      * Net Revenue per unit: 87.80 SEK
+      * Cost per unit: -91.92 SEK
+      * **Contribution Margin: -4.12 SEK**
+
+**The Revelation:**
+
+Your most successful promotion is actually *losing you over 4 kronor* for every bag sold. You are paying customers to take your coffee. While you cleared inventory, you did not generate any money to pay for rent, salaries, or marketing.
+
+At the same time, you might find that a full-price "Lykke Capsule Happiness" sale (SKU WEB032) has a Contribution Margin of **57.54 SEK**.
+
+This insight is transformative. Your growth strategy immediately shifts. Instead of designing promotions based on revenue, you now design them based on profit. You can make data-driven decisions like:
+
+  * Capping the "SUMMERDEAL" discount at 10% to ensure profitability on every sale.
+  * Excluding high-cost products like the "UFO 250g" from sitewide promotions.
+  * Investing your marketing budget to find more customers who buy high-margin products like the "Lykke Capsules".
+
+By connecting your customer-facing sales data with your internal financial data, you evolve from tracking sales to engineering profit. This is the key to building a truly sustainable and scalable coffee company.
+
+
+### A Simple Framework for Profitable Growth
+
+Now that we've seen how to connect your sales and financial data, the final step is to build a clear framework that uses these insights to guide your growth. Instead of getting lost in dozens of metrics, the goal is to focus on a few "North Star" KPIs that tell you if the business is truly healthy and moving in the right direction.
+
+Four key questions will define your success:
+
+* **Are we growing our customer base?** (*Acquisition / Growth*) *New Customers per Month* — measures expansion of the customer base.
+* **Are our customers coming back for more?** (*Retention / Loyalty*) *Customer Retention Rate (CRR)* — signals the ability to build lasting relationships and repeat purchases. 
+* **Is the lifetime value of a customer greater than what we pay to acquire them?** (*Sustainable Profitability*) *CLV/CAC Ratio* — ensures that the value of customers outweighs acquisition costs.
+* **Does every sale actually make us money after all variable costs?** (*Unit Profitability*, our **Contribution Margin %**)— shows whether each sale contributes positively after product, marketing, and variable costs.
+
+### Core KPIs: where to find them in your files?
 
 | **KPI** | Type | Data source | Columns needed | Available in existing datasets? | Why relevant |
 |---------|------|-------------|----------------|---------------------------------|--------------|
@@ -83,15 +205,19 @@ Since Lykke will operate one central e-commerce site but handle fulfillment loca
 | **CLV / CAC Ratio** | Core – Profitability | Shopify (Orders_data_LTM) + Recharge + Ads/Klaviyo | **CLV:** `customer_id`, `order_total`/`subtotal`, order cadence; Recharge recurring revenue & tenure. **CAC:** marketing `spend` and `new_customers_acquired` by campaign/channel | Partial (needs ad spend) | Ensures lifetime value exceeds acquisition cost so growth is economically viable. |
 | **Contribution Margin %** | Core – Profitability | Shopify (Orders_data_LTM) + Linklog + PSPs (+ internal product cost per SKU) | `revenue`, `discounts`, per-order `shipping_cost` (Linklog/Webshipper), `psp_fee` (Stripe/Klarna/PayPal), `COGS_per_SKU` | Partial (needs shipping/fees/COGS detail) | Validates unit economics; scaling only makes sense if each order is contribution-positive. |
 
-Additional support KPIs can be found in the Anex.
 
-The recommended setup is therefore:  
-- **Executive Dashboard**: One main view anchored on the four core KPIs (New Customers, CRR, CLV/CAC, Contribution Margin), with global totals at the top and partner/market comparisons beneath.  
-- **Supporting Dashboards**: Objective-specific panels (Acquisition, Retention, Profitability, Customer Segmentation) that provide diagnostic detail and can be filtered by market.  
+Think of these as your ultimate destination. To understand the journey, you'll use a dashboard of **supporting metrics**—like **Average Order Value (AOV)**, **Conversion Rate**, and **Purchase Frequency**. These secondary KPIs are your diagnostic tools. They don't define success on their own, but they brilliantly explain *why* your core metrics are changing. For example, if retention drops, a glance at purchase frequency might tell you the story. We have added many supporting KPIs and how to find them in the Anex. 
 
-This approach gives Lykke a scalable and transparent system: one website, one dashboard structure, but insights that serve both global decision-making and local partner accountability.
+With this framework in place, you can focus on pulling the three main **levers of growth**:
 
-### 3.2 Industry Benchmarks (2024–2025)
+* **Markets:** Where are our most profitable customers, and which new regions should we target?
+* **Products:** Which coffees create loyal fans and encourage bigger orders?
+* **Customers:** Who are our best customers, and how do we find more people like them?
+
+The final piece is to bring this to life in simple, reliable dashboards. Since you'll operate a central e-commerce site with local partners handling fulfillment, these dashboards must show both the global picture and a partner-level breakdown. This ensures that strong growth in one market doesn't hide underperformance in another, keeping the system fair, transparent, and aligned for shared success.
+
+
+### 3.3 Industry Benchmarks (2024–2025)
 
 Lykke’s e-commerce KPIs can be further understood by comparing them with industry benchmarks from leading sources:
 
@@ -116,6 +242,57 @@ Lykke’s e-commerce KPIs can be further understood by comparing them with indus
 - Return Rate: **3.0%**  
 
 These figures provide a **reference point** for setting expectations. For instance, if Lykke’s conversion rate significantly underperforms vs. 3.6% (Swedish beverages), it indicates friction in the purchase funnel. Similarly, tracking CLV/CAC against the 3:1 guideline ensures sustainable growth. Over time, Lykke’s own benchmarks will be more valuable for guiding decisions than external averages.
+
+### 3.4 A/B Testing: The Engine for Smart Growth
+
+Our data journey so far has focused on connecting your sales and financial reports to create a clear, accurate picture of your business performance. This gives you a powerful understanding of **what has happened**—which products are most profitable, which sales are most valuable, and where your core strengths lie.
+
+The next logical step in this journey is to use these insights to actively shape what happens **next**. This is where we shift from analyzing the past to experimenting for the future, and the most effective and data-driven tool for this is A/B testing. It’s how you take an insight and turn it into a measurable improvement.
+As you can see, A/B testing is a powerful engine for turning insights into measurable growth. To help you get started on this path, we will provide a list of recommended and easy-to-use A/B testing tools in the appendix as well as some terminology. 
+
+#### **what is A/B testing?**
+
+At its core, **A/B testing** is a simple method of comparing two versions of something to see which one performs better. Think of it as asking your customers a direct question—"Do you prefer this headline or *that* one?"—and letting their clicks and purchases give you the definitive answer.
+
+The beauty of A/B testing is its simplicity and cyclical nature. Modern e-commerce and marketing tools make it incredibly easy to set up tests without needing a developer. This allows you to get into a powerful rhythm: **Test, Learn, Repeat**. You run a small experiment, learn from the results, implement the winning version, and then move on to the next idea. It's the engine of continuous improvement.
+
+Let's build a narrative. Lykke is planning a new marketing campaign with one clear goal: **convert more first-time website visitors into paying customers.** You have a budget for ads, but you want to make sure the website experience itself is as effective as possible. Here’s how you’d use A/B testing to do it.
+
+#### **Step 1: The Signal (The "Aha!" Moment in Your Data)**
+
+Your journey starts in **Google Analytics**. While reviewing your reports, you notice a clear pattern: a high number of new visitors come to your site from social media, they browse the popular "Best Sellers" collection, add a bag of coffee to their cart... but then a large percentage leave the site without completing the purchase.
+
+This is a **signal**. Your data is showing you exactly where the hesitation is happening. The interest is there, but something is stopping them from taking that final step.
+
+#### **Step 2: The Hypothesis (The "What If...?" Question)**
+
+Based on this signal, your team forms a simple, testable idea:
+
+> "We believe that offering a compelling welcome incentive to first-time visitors will reduce cart abandonment and increase our conversion rate. We hypothesize that a **'Free Shipping on Your First Order'** offer will be more effective than a percentage discount."
+
+#### **Step 3: The Test (The A/B/C Experiment)**
+
+Instead of just guessing, you run an experiment. Using an A/B testing tool integrated with your site, you create three versions of the new visitor experience, which will be shown randomly to different users for two weeks:
+
+* **Version A (The Control):** Your website as it is today. No special offer is shown.
+* **Version B (The "Free Shipping" Variant):** A banner appears for new visitors that says, *"Welcome to Lykke! Enjoy Free Shipping On Your First Order."*
+* **Version C (The "Discount" Variant):** A similar banner appears, but it offers *"Welcome! Get 15% Off Your First Bag of Coffee."*
+
+The tool will automatically handle splitting the traffic and tracking the one metric that matters for this test: the **new customer conversion rate**.
+
+
+#### **Step 4: The Result (The Data-Driven Decision)**
+
+After two weeks, the results are in, and they are crystal clear.
+
+* **Version A (No Offer):** Had a new customer conversion rate of **1.8%**.
+* **Version B (Free Shipping):** Had a new customer conversion rate of **3.1%**.
+* **Version C (15% Off):** Had a new customer conversion rate of **2.4%**.
+
+The data has spoken. The **"Free Shipping"** offer is the decisive winner, nearly doubling your conversion rate compared to doing nothing. You now have concrete proof, not just an opinion, that this is the best offer to attract new customers. You confidently roll out the "Free Shipping" banner to 100% of new visitors, knowing it will drive more sales and make your marketing ad spend far more efficient.
+
+And the process continues. Your next test might be to see if a different headline on that banner can push the conversion rate from 3.1% even higher. This is how you build a powerful, repeatable engine for growth.
+
 
 ## 4. A Unified Analytics Strategy for Lykke
 
@@ -416,3 +593,22 @@ Finally, we also acknowledge a set of **extra KPIs**: these are metrics that app
 
 
 
+
+---
+
+## Key A/B Testing Terms Explained
+
+### 1. Sample Size
+This is simply the number of users who need to be included in your test to get a reliable result.
+
+* **In our story:** Before launching the "Welcome Offer" campaign, a testing tool would tell you that you need a certain number of new visitors (e.g., 10,000 per version) to participate. This large **sample size** ensures that the final conversion rates aren't just the result of random luck, making your data trustworthy.
+
+### 2. Minimum Detectable Effect (MDE)
+This is the smallest improvement you're interested in detecting. It answers the question, "How big of a change would make this test worthwhile?"
+
+* **In our story:** You might decide that you'll only implement a new offer if it increases the conversion rate by at least **0.5%**. This is your **Minimum Detectable Effect**. You're telling the tool not to bother you with tiny, insignificant changes. Setting a realistic MDE is crucial, as trying to detect a very small effect requires a much larger sample size.
+
+### 3. Statistical Confidence (or Significance)
+This is a measure of how certain you can be that your results are not a random fluke. It's usually expressed as a percentage (e.g., 95% confidence).
+
+* **In our story:** When the test concluded that "Free Shipping" was the winner, the tool would report a **statistical confidence** level of, say, 98%. This means you can be 98% sure that the increase in sales was directly caused by the free shipping offer and that if you ran the same test again, you would see the same result. It's the mathematical proof that gives you the confidence to roll out the winning version to everyone.
