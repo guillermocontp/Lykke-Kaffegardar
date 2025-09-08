@@ -170,7 +170,7 @@ Ultimately, this unified approach ensures your final dashboards are not just inf
 
 To achieve this consolidated view in Power BI, we must connect to your various platforms and bring the data together. There are two primary architectural approaches to accomplish this. The choice we make will depend on our long-term goals for scalability and data ownership.
 
-### 5.1 The Scalable Warehouse Approach
+### Option 1: The Scalable Warehouse Approach
 
 Think of a data warehouse as a central, organized library for all of Lykke's historical data. In this model, data is first extracted from your sources, cleaned, and stored in this central hub. Power BI then connects to this pristine, well-organized data to create reports.
 
@@ -180,7 +180,7 @@ Think of a data warehouse as a central, organized library for all of Lykke's his
 - **Cloud Data Warehouse:** A highly scalable database (e.g., Snowflake, Google BigQuery) that stores and processes the data.
 - **Power BI:** The visualization tool that connects to the warehouse.
 
-### 5.2 The Direct Connection Approach
+### Option 2: The Direct Connection Approach
 
 In this model, Power BI connects directly to each of your platforms. Its built-in data preparation tool, Power Query, is then used to pull, combine, and clean the data within Power BI itself. 
 
@@ -190,7 +190,7 @@ In this model, Power BI connects directly to each of your platforms. Its built-i
 - **Power BI (with Power Query):** Serves as the all-in-one tool for ingestion, data modeling, and visualization.
 
 
-### 5.3 How Data is Ingested
+### 5.1 How Data is Ingested
 
 Creating a unified dashboard requires an automated and secure method to pull data from various platforms like Shopify and Fortnox. This process is handled by communicating with each platform's **API (Application Programming Interface)**.
 
