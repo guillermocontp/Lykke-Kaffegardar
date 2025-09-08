@@ -131,6 +131,8 @@ This is where a business intelligence platform like Microsoft Power BI becomes t
 
 Before your data appears in a Power BI dashboard, it goes through a vital, transformative step called **Data Modeling**. It is arguably the most valuable part of this entire process.
 
+![Consolidation](/images/image_consolidation.png)
+
 Think of your raw data from Shopify, Fortnox, and other platforms as high-quality, raw ingredients: flour, eggs, sugar, and coffee beans. By themselves, they are individual components. You can look at each one, but their true potential is only unlocked when you combine them according to a well-defined recipe.
 
 **Data modeling is that recipe.**
@@ -224,7 +226,7 @@ For Lykke, using Actigate as the middle layer is more practical, as it minimizes
 
 **Key Takeaway:** While standard platforms like Shopify and Google Analytics are easy to connect, more specialized systems like Fortnox and Linklog will likely require custom development work.
 
-### 5.4 Choosing the Right Path for Lykke
+### 5.2 Choosing the Right Path for Lykke
 
 Each architecture is optimized for different goals. The right choice for Lykke is a strategic decision that balances short-term speed with long-term scalability and data ownership. Below is a framework to help guide this decision.
 
@@ -236,7 +238,7 @@ Each architecture is optimized for different goals. The right choice for Lykke i
 | **Data Ownership** | Data is modeled and stored within Power BI's ecosystem. | You own and control a central, independent copy of your data in the warehouse. |
 
 
-### 5.5 Challenges and Mitigation Strategies
+### 5.3 Challenges and Mitigation Strategies
 
 #### Limited Historical Data Retention
 APIs such as Shopify typically provide only limited transaction history (often 90 days). Without intervention, this restricts Lykke’s ability to run longer-term analyses or compare performance across years. Lykke has two practical options to address this:
@@ -258,13 +260,44 @@ Power BI is well suited to managing multiple markets, but each new partner requi
 - **Consider connectors selectively**: For frequently used data sources, a connector may reduce effort by automating repetitive setup, even if this adds some cost.
 
 
+## 6 Unified Roadmap: From Decision to an Analytics platform.
+
+This new roadmap is a single, unified plan. It begins with the crucial strategic decision about our architecture, which will then dictate the specific tasks in the subsequent phases.
+
+### Phase 1: Strategy & Architectural Decision (1-2 Weeks)
+
+**Activities:** Finalize the core KPIs for the first dashboards. Conduct a workshop to review the pros and cons of the "Direct Connection" vs. "Warehouse" architectures.
+
+**Deliverable:** A signed-off project plan with the officially chosen architecture.
+
+### Phase 2: Foundation & Setup (1-3 Weeks)
+
+**Activities:** Based on the decision in Phase 1, we will either configure the Power BI workspace for direct connections or provision and set up the cloud data warehouse and ingestion tools.
+
+**Deliverable:** A fully configured technical environment ready for development.
+
+### Phase 3: Pipeline Development & Data Modeling (4-6 Weeks)
+
+**Activities:** Connect to all data sources (Shopify, Fortnox, etc.), including any necessary custom development. Build the core data model that cleans, combines, and enriches the data into a "single source of truth."
+
+**Deliverable:** A robust and automated data pipeline feeding analysis-ready data.
+
+### Phase 4: Visualization & Training (2-3 Weeks)
+
+**Activities:** Build the interactive dashboards in Power BI. Validate the metrics and visuals with your team to ensure they are clear and actionable. Conduct training sessions on how to use and interpret the dashboards.
+
+**Deliverable:** A suite of validated, insightful dashboards and a trained user base.
+
+### Phase 5: Go-Live & Handover (1 Week)
+
+**Activities:** Deploy the final dashboards for company-wide use. Provide final documentation and establish a plan for ongoing support and maintenance.
+
+**Deliverable:** The official launch of Lykke's new analytics platform.
+
 
 ---
 
-## 7. Conclusion & Next Steps (to do)
-- Clear summary of findings.  
-- Expected business impact.  
-- Suggested next steps for Lykke.  
+
  
 
 
@@ -380,134 +413,6 @@ Finally, we also acknowledge a set of **extra KPIs**: these are metrics that app
 | **On-Time Delivery Rate** | Extra – Operational/Diagnostic | Linklog | `ship_date`, `expected_delivery_date` (or SLA date) | Yes | Service quality signal; supports retention but is a step removed from core KPIs. |
 | **Subscription Mix (% of revenue)** | Extra – Diagnostic | Orders_data_LTM + Recharge | order/subscription flag, subscription revenue by period | Partial (needs clear mapping) | Context on revenue resilience from recurring vs one-time. |
 | **Channel CAC (by channel)** | Extra – Diagnostic (granular) | Ads platforms + Klaviyo | `spend` by channel, `new_customers_acquired` by channel | No | Granular optimization once high-level CAC is established. |
-
-
-
-
-
-
-
-## 3. Unified Roadmap: From Decision to Dashboard
-
-This new roadmap is a single, unified plan. It begins with the crucial strategic decision about our architecture, which will then dictate the specific tasks in the subsequent phases.
-
-### Phase 1: Strategy & Architectural Decision (1-2 Weeks)
-
-**Activities:** Finalize the core KPIs for the first dashboards. Conduct a workshop to review the pros and cons of the "Direct Connection" vs. "Warehouse" architectures.
-
-**Deliverable:** A signed-off project plan with the officially chosen architecture.
-
-### Phase 2: Foundation & Setup (1-3 Weeks)
-
-**Activities:** Based on the decision in Phase 1, we will either configure the Power BI workspace for direct connections or provision and set up the cloud data warehouse and ingestion tools.
-
-**Deliverable:** A fully configured technical environment ready for development.
-
-### Phase 3: Pipeline Development & Data Modeling (4-6 Weeks)
-
-**Activities:** Connect to all data sources (Shopify, Fortnox, etc.), including any necessary custom development. Build the core data model that cleans, combines, and enriches the data into a "single source of truth."
-
-**Deliverable:** A robust and automated data pipeline feeding analysis-ready data.
-
-### Phase 4: Visualization & Training (2-3 Weeks)
-
-**Activities:** Build the interactive dashboards in Power BI. Validate the metrics and visuals with your team to ensure they are clear and actionable. Conduct training sessions on how to use and interpret the dashboards.
-
-**Deliverable:** A suite of validated, insightful dashboards and a trained user base.
-
-### Phase 5: Go-Live & Handover (1 Week)
-
-**Activities:** Deploy the final dashboards for company-wide use. Provide final documentation and establish a plan for ongoing support and maintenance.
-
-**Deliverable:** The official launch of Lykke's new analytics platform.
-
-
-
-
-
-
-
-
-
-## 4. Recommended Analytics Approach  
-
-### 4.1 Evaluation of Strategic Options  
-
-#### Enterprise Data Warehouse (Snowflake/dbt, etc.)
-An enterprise data warehouse is a centralized platform designed to store, transform, and integrate very large and complex datasets from multiple systems. Tools like Snowflake and dbt enable companies to build robust pipelines, apply advanced transformations, and scale analytics as data volumes grow.  
-
-- **Benefits**:  
-  - Provides a single source of truth by consolidating all systems into one structured environment.  
-  - Enables advanced analytics, machine learning, and automation.  
-  - Strong governance and data quality management.  
-
-- **Limitations for Lykke**:  
-  - High upfront cost and technical overhead, requiring dedicated data engineering resources.  
-  - Longer implementation timeline before insights are available.  
-  - Would add more complexity than value for Lykke’s setup: even as the company scales across more markets, the overall data volume will remain relatively small (sales, products, partners). The challenge is **data consistency across markets**, not “big data.”  
-  - In practice, an enterprise warehouse would add complexity and costs without creating proportional value for Lykke.  
-
----  
-
-#### Lightweight Business Intelligence tool (Power BI, Looker Studio)
-A lightweight BI approach connects directly to existing data sources (e.g., Shopify, Fortnox, GA4) without building a full warehouse. Power BI allows the creation of interactive dashboards, applying basic transformations and modeling within the tool itself.  
-
-- **Pros**:  
-  - Faster to implement and more cost-effective compared to a full data warehouse.  
-  - Allows teams to start tracking KPIs and visualizing data quickly.  
-  - Direct connectors for most of Lykke’s current systems reduce the need for heavy engineering.  
-  - Flexible and user-friendly for non-technical users, supporting self-service reporting.  
-
-- **Cons**:  
-  - Data remains fragmented unless connectors and models are carefully maintained.  
-  - Limited history and depth of analysis compared to a warehouse.  
-  - Scalability challenges: as Lykke grows and adds markets, dashboards will require oversight to ensure accuracy and consistency.  
-
----
-
-### 4.2 Most Suitable Approach for Lykke
-Given Lykke’s current stage and business model, Power BI is the most suitable solution to meet their analytics needs.
-
-Lykke’s main challenge is not handling massive volumes of data, but rather ensuring data consistency across markets, partners, and systems. A lightweight BI tool like Power BI addresses this challenge in a pragmatic way:
-
-- **Right-sized for Lykke’s data**: Even as Lykke expands to more markets, the underlying datasets (sales, products, customers, partners) remain relatively small compared to companies that require a full enterprise warehouse.
-
-- **Quick time-to-value**: Power BI can be implemented rapidly, enabling Lykke to begin monitoring KPIs, customer segments, and partner performance without the delays of building a complex data infrastructure.
-
-- **Supports growth and scale**: While simpler than a data warehouse, Power BI still offers the flexibility to connect to multiple systems (Shopify, Fortnox, GA4, etc.), manage data models, and expand dashboards as new markets come online.
-
-- **Practical governance**: Data consistency rules and oversight can be embedded into Power BI models, giving Lykke the reliability it needs without heavy engineering.
-
-Power BI provides a scalable, cost-effective, and user-friendly approach that matches Lykke’s mission and growth ambitions. It balances today’s need for reliable, consistent data with the flexibility to grow as the business expands across Europe.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
