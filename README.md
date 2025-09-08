@@ -91,6 +91,31 @@ The recommended setup is therefore:
 
 This approach gives Lykke a scalable and transparent system: one website, one dashboard structure, but insights that serve both global decision-making and local partner accountability.
 
+### 3.2 Industry Benchmarks (2024–2025)
+
+Lykke’s e-commerce KPIs can be further understood by comparing them with industry benchmarks from leading sources:
+
+**Nudge — Key E-commerce Benchmarks 2025**  
+- Conversion Rate: **1.58%**  
+- Average Order Value (AOV): **$121.37**  
+- Cart Abandonment Rate: **70.19%**  
+- Customer Retention Rate (CRR): **38%**  
+- CLV/CAC Ratio: **≥ 3:1** (a healthy business ensures CLV is at least 3x CAC)  
+- Return Rate: **20–30%**  
+- Customer Satisfaction (CSAT): **70–80%**  
+
+**Shopify — Customer Retention by Industry (2025)**  
+- E-commerce Retention Rate: **30%**  
+
+**Ecommercedb — Sweden (Beverages eCommerce, 2024)**  
+- Add-to-Cart Rate: **12.3%**  
+- Cart Abandonment Rate: **70.7%**  
+- Conversion Rate: **3.6%**  
+- Average Order Value (AOV): **$119**  
+- Discount Rate: **10.2%**  
+- Return Rate: **3.0%**  
+
+These figures provide a **reference point** for setting expectations. For instance, if Lykke’s conversion rate significantly underperforms vs. 3.6% (Swedish beverages), it indicates friction in the purchase funnel. Similarly, tracking CLV/CAC against the 3:1 guideline ensures sustainable growth. Over time, Lykke’s own benchmarks will be more valuable for guiding decisions than external averages.
 
 ## 4. A Unified Analytics Strategy for Lykke
 
