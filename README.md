@@ -58,10 +58,24 @@ The current setup presents several challenges for Lykke’s growth ambitions:
 
 To guide Lykke's expansion, we need a clear set of strategic KPIs to act as our North Star. But before we define that ultimate destination, we must first map out our starting point. Every successful growth strategy is built on a solid data foundation, so our "data journey" will begin by exploring the powerful insights we can unlock right now. We'll start by using the tools and data you already have—your Shopify order history and Fortnox financial records—to build a foundational understanding of the business. By first mastering what this data tells us, we can then build a clear and actionable path toward the high-level metrics that will truly drive your growth.
 
-
 ### 3.1 The Journey from Operational Metrics to Strategic Growth
 
-Right now, with your Fortnox data, you have a powerful lens into the daily health of your business. This is the first and most critical step. Think of it as knowing how to sail your ship day-to-day.
+Your consolidated Orders data file is the pulse of your e-commerce store. It captures every customer interaction, every product sold, and every discount claimed. This is the frontline of your business, and it provides the first layer of critical insights. (named `orders data LTM AUG 2025` when you shared it with us)
+
+#### **What We Can Track Today (The Customer's Viewpoint)**
+
+From this single file, you can understand your business from the customer's perspective. You can answer crucial questions about sales and marketing effectiveness:
+
+  * **What are our Top-Selling Products?** By summing the `Lineitem quantity` for each `Lineitem name`, you can see exactly which coffee beans or capsules your customers love the most.
+  * **What is our Average Order Value (AOV)?** By taking the average of the `Total` column for each unique order (`Name`), you can track how much the typical customer spends in one transaction.
+  * **How Effective Are Our Discounts?** By analyzing the `Discount Code` and `Discount Amount` columns, you can see which promotions are most popular and how much revenue you are giving up to drive those sales.
+
+These KPIs are essential. They tell you what's happening on your website and help you answer the question: **"What are our customers buying and why?"**
+
+
+### Moving forward: Strategic KPIs
+
+Right now, with your Fortnox data, you have a powerful lens into the daily health of your business. This is the first and most critical step. Think of it as knowing how to sail your ship day-to-day.(the file is `article data fortnox 2024-2025`)
 
 #### **Phase 1: What We Can Track Today**
 
@@ -75,117 +89,69 @@ These KPIs are vital. They help you answer the question: **"How are we doing rig
 
 But as you grow, a more important question emerges: **"Where should we invest our time and money to grow faster and more profitably?"** This is where the limitations of these initial KPIs start to show.
 
-#### **Phase 2: The Strategic Shift - Why Contribution Margin % is Your North Star**
-
-Imagine this scenario: Your data shows the "Uganda UFO 250g" is your #1 seller by both units and revenue. The obvious conclusion would be to pour all your marketing budget into promoting it, right?
-
-**This is where the story gets interesting.**
-
-Let's say you also sell "Lykke Coffee Capsules." They are #5 in sales volume. However, these capsules are almost exclusively sold through your website to high-value subscription customers who discovered you via a low-cost organic search. The Uganda beans, on the other hand, sell well because you run expensive pay-per-click ads for them on Google.
-
-The operational KPIs don't see this hidden context. They see volume and revenue, but they don't see the **cost of acquiring that revenue.**
-
-This is the exact problem that the **Contribution Margin %** is designed to solve.
-
-**Contribution Margin %** tells you what percentage of revenue from a sale is left over to cover all your *fixed* costs—rent, salaries, insurance, warehouse costs—and then generate profit.
-
-It shifts the question from "What sells the most?" to **"What sale contributes the most to keeping the lights on and growing the business?"**
-
-#### **Phase 3: Putting it into Practice for Growth**
-
-To make this KPI your strategic guide, you need to start connecting your data sources. You have the sales and COGS data in your Fortnox file. The next step is to enrich it:
-
-1.  **Pull in Channel Data:** Your Shopify or Google Analytics data will tell you *how* a customer bought a product. Was it from a costly paid ad, or a "free" organic search?
-2.  **Add Channel Costs:** Assign variable costs to each channel. For example, factor in the advertising spend for products sold via Google Ads, or the sales commission for a wholesale deal. These are costs directly tied to making that sale happen.
-
-Now, you can calculate a much more powerful, strategic Contribution Margin.
-
-Let's revisit our example with this new, enriched data (**This is an ilustrative example**):
-
-* **Uganda UFO 250g (Sold via Paid Ads):**
-    * Revenue: 120 SEK
-    * COGS: -70 SEK
-    * Ad Cost per bag: -25 SEK
-    * **True Contribution Margin: 25 SEK (or 20.8%)**
-
-* **Lykke Coffee Capsules (Sold via Organic Search):**
-    * Revenue: 80 SEK
-    * COGS: -45 SEK
-    * Ad Cost per bag: -0 SEK
-    * **True Contribution Margin: 35 SEK (or 43.7%)**
-
-**The Revelation:**
-
-Suddenly, the "Lykke Capsules" are revealed to be the true engine of your profitability. For every krona of revenue from the capsules, you get to keep **43.7%** to pay your fixed costs. For the best-selling Uganda beans, you only keep **20.8%**.
-
-This single insight changes your entire growth strategy. Instead of just pushing your top-seller, you now know that the most strategic way to grow is to:
-* Invest in SEO to attract more organic customers for your capsules.
-* Create a subscription service to increase the lifetime value of these high-margin customers.
-* Look for other "hidden gem" products that are highly profitable, even if they aren't your top sellers by volume.
-
-By evolving from tracking Gross Margin to a strategic **Contribution Margin %**, you move from simply operating your business to actively and intelligently engineering its growth. You start making decisions based not on what is popular, but on what is truly profitable.
-
-
-
-
-
-### 3.2 The Journey from Sales Metrics to a Profit-Driven Strategy
-
-Your consolidated Ordesrs data file is the pulse of your e-commerce store. It captures every customer interaction, every product sold, and every discount claimed. This is the frontline of your business, and it provides the first layer of critical insights.
-
-#### **Phase 1: What We Can Track Today (The Customer's Viewpoint)**
-
-From this single file, you can understand your business from the customer's perspective. You can answer crucial questions about sales and marketing effectiveness:
-
-  * **What are our Top-Selling Products?** By summing the `Lineitem quantity` for each `Lineitem name`, you can see exactly which coffee beans or capsules your customers love the most.
-  * **What is our Average Order Value (AOV)?** By taking the average of the `Total` column for each unique order (`Name`), you can track how much the typical customer spends in one transaction.
-  * **How Effective Are Our Discounts?** By analyzing the `Discount Code` and `Discount Amount` columns, you can see which promotions are most popular and how much revenue you are giving up to drive those sales.
-
-These KPIs are essential. They tell you what's happening on your website and help you answer the question: **"What are our customers buying and why?"**
-
-But as you scale, this view is incomplete. A best-selling product driven by a steep discount might be a "vanity metric"—it looks good on the surface but could be hurting your ability to grow profitably.
-
 #### **Phase 2: The Strategic Shift – The Missing Piece of the Puzzle**
 
-Imagine this common scenario: You run a "20% Off" promotion using the `Discount Code` "SUMMERDEAL". Your `Orders Data` file shows a massive spike in sales for your "UFO 250g coffee". You sell 500 bags in one weekend. It looks like a huge success.
+Imagine you run a "20% Off" promotion using the `Discount Code` "SUMMERDEAL". Your `Orders Data` file shows a massive spike in sales for your "UFO 250g coffee." It looks like a huge success.
 
 The immediate conclusion is to run more 20% off promotions.
 
-But this file, on its own, is missing the most critical piece of financial information: **the cost of the coffee beans themselves.** It can tell you what you *sold*, but it can't tell you what you *earned*. Did that 20% discount wipe out your entire profit margin, or just a small piece of it?
+But this data is missing two critical pieces of financial information:
+1.  **The cost of the coffee beans themselves (COGS).**
+2.  **The cost of getting that customer to your website to make the purchase.**
 
-To make strategic decisions that lead to sustainable growth, you must answer the question: **"Which sales are actually funding our growth, and which are just covering costs?"**
+To make strategic decisions, you must evolve from answering "What did we sell?" to answering the real question: **"After all variable costs, did this sale actually make us money?"**
 
-#### **Phase 3: Putting it into Practice – Connecting Your Data for True Profit Insight**
+#### **Phase 3: Putting it into Practice for Growth**
 
-This is where you combine your two data sources—the `Orders Data` file and the `Article data fortnox` file—to create a single, powerful source of truth. The key that links them together is the `Lineitem sku` from your orders file and the corresponding product identifier in your financial data.
+To calculate a truly accurate Contribution Margin, you must account for all the variable costs that go into making a specific sale. These costs come from different parts of your business, primarily the product cost itself (from Fortnox) and the marketing cost required to bring that customer to your store (from platforms like Google Analytics).
 
-By connecting these files, you can calculate the true **Contribution Margin** for *every single product sold in every single order*. (**The numbers written here are not taken from the data file and are only used for this example!**)
+In our example, we use the Customer Acquisition Cost (CAC) to represent this marketing spend. This metric is so crucial that it's one of the four strategic KPIs we recommend, and we explain how to calculate it in detail later. While you could calculate a margin using only the product cost, the result would be incomplete. By including the cost to acquire the customer, you get the real, actionable truth about your profitability.
 
-Let's revisit our "SUMMERDEAL" scenario with this new, connected data:
 
-1.  **Find the Sale:** In your `Orders Data`, you see a line item: "UFO 250g coffee", `Lineitem price`: 109.75 SEK, with a 20% discount, making the net price **87.80 SEK**.
-2.  **Find the Cost:** You look up the `Lineitem sku` ("WEB035") in your `Article data fortnox` file and find its `COGS_Per_Enhet` (Cost of Goods Sold Per Unit) is **91.92 SEK**.
-3.  **Calculate the True Contribution:** 
-      * Net Revenue per unit: 87.80 SEK
-      * Cost per unit: -91.92 SEK
-      * **Contribution Margin: -4.12 SEK**
+To make the Contribution Margin your strategic guide, the goal is to create a single, powerful view that combines three essential pieces of data for every sale:
+
+1.  **The Sale Itself:** From your `Orders Data` file, you know what was sold, at what price, and with what discount.
+2.  **The Product Cost:** By linking that sale to your `Article data fortnox` file using the product SKU, you can attach the specific Cost of Goods Sold (COGS) for that item.
+3.  **The Acquisition Cost:** By pulling in data from Shopify or Google Analytics, you identify the marketing channel that brought in the customer (e.g., a paid ad, an email campaign, or an organic search) and assign the advertising cost associated with that sale.
+
+When you bring these three datasets together, you create a complete picture. This allows you to calculate the true **Contribution Margin** for every single order, giving you a precise measure of profitability. 
+
+#### Example
+Let's revisit our "SUMMERDEAL" scenario, but now we'll look at two customers who made the *exact same purchase* but came from different channels.(**The numbers written here are not taken from the data file and are only used for this example!**)
+
+**First, we find the product margin:**
+* **Net Price of "UFO 250g" (after 20% off):** 87.80 SEK
+* **COGS (from Fortnox):** -91.92 SEK
+* **Product Margin:** **-4.12 SEK** (This sale is already unprofitable before marketing costs)
+
+Now, let's factor in the **Customer Acquisition Cost (CAC)**.
+
+**Customer A: Acquired via a Google Ad**
+This customer clicked a paid search ad to find your site.
+* **Product Margin:** -4.12 SEK
+* **Cost of Google Ad Click (CAC):** -35.00 SEK
+* **True Contribution Margin: -39.12 SEK**
+
+**Customer B: Acquired via Organic Search**
+This customer found you through an unpaid Google search result.
+* **Product Margin:** -4.12 SEK
+* **Cost of Acquisition (CAC):** -0.00 SEK
+* **True Contribution Margin: -4.12 SEK**
 
 **The Revelation:**
 
-Your most successful promotion is actually *losing you over 4 kronor* for every bag sold. You are paying customers to take your coffee. While you cleared inventory, you did not generate any money to pay for rent, salaries, or marketing.
-
-At the same time, you might find that a full-price "Lykke Capsule Happiness" sale (SKU WEB032) has a Contribution Margin of **57.54 SEK**.
-
-This insight is transformative. Your growth strategy immediately shifts. Instead of designing promotions based on revenue, you now design them based on profit. You can make data-driven decisions like:
-
-  * Capping the "SUMMERDEAL" discount at 10% to ensure profitability on every sale.
-  * Excluding high-cost products like the "UFO 250g" from sitewide promotions.
-  * Investing your marketing budget to find more customers who buy high-margin products like the "Lykke Capsules".
-
-By connecting your customer-facing sales data with your internal financial data, you evolve from tracking sales to engineering profit. This is the key to building a truly sustainable and scalable coffee company.
+Your "successful" promotion is a significant financial drain, especially when driven by paid ads. You are paying **39.12 SEK** for every customer you acquire through that channel with that discount. This insight is transformative because it shifts your focus from product-level profitability to **channel and customer profitability**.
 
 
-### A Simple Framework for Profitable Growth
+Your strategy now evolves. Instead of just pushing popular products, you make data-driven decisions to improve profitability:
+* **Optimize Ad Spend:** Stop running ads for the "SUMMERDEAL" promotion, or reduce the discount for paid traffic to ensure every sale is profitable.
+* **Invest in SEO:** Since the organic channel delivers profitable (or less unprofitable) customers, you can invest more in content and SEO to attract them for free.
+* **Focus on High-Value Channels:** Analyze which channels bring you customers who not only buy profitably on their first order but also come back for more, leading to a high **Customer Lifetime Value (CLV)**.
+
+By connecting your sales, financial, and marketing data, you evolve from tracking product sales to engineering customer profitability. This is the key to building a truly sustainable and scalable coffee company.
+
+
+### 3.2 A Simple Framework for Profitable Growth
 
 Now that we've seen how to connect your sales and financial data, the final step is to build a clear framework that uses these insights to guide your growth. Instead of getting lost in dozens of metrics, the goal is to focus on a few "North Star" KPIs that tell you if the business is truly healthy and moving in the right direction.
 
