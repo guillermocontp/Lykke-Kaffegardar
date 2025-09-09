@@ -75,7 +75,7 @@ These KPIs are essential. They tell you what's happening on your website and hel
 
 ### Moving forward: Strategic KPIs
 
-Right now, with your Fortnox data, you have a powerful lens into the daily health of your business. This is the first and most critical step. Think of it as knowing how to sail your ship day-to-day.(the file is `article data fortnox 2024-2025`)
+Right now, with your Fortnox data, you have a powerful lens into the daily health of your business. (the file is `article data fortnox 2024-2025`)
 
 #### **Phase 1: What We Can Track Today**
 
@@ -510,6 +510,7 @@ This layered framework ensures that Lykke focuses on the most critical indicator
 To track and grow Lykke’s B2C e-commerce performance, we distinguish between two categories of KPIs.  
 First, the **core KPIs** represent the most strategic measures of success and directly connect to Lykke’s growth objectives in B2C.  
 Second, the **supporting KPIs** act as diagnostic levers that explain why the core KPIs improve or decline, helping identify the underlying drivers of change.  
+This are explained and found linking data from different platforms, in the way is explained in the table.
 
 
 ### Core KPIs
@@ -558,9 +559,49 @@ Finally, we also acknowledge a set of **extra KPIs**: these are metrics that app
 | **Channel CAC (by channel)** | Extra – Diagnostic (granular) | Ads platforms + Klaviyo | `spend` by channel, `new_customers_acquired` by channel | No | Granular optimization once high-level CAC is established. |
 
 
+### Current KPIs to track
+This are KPIs that can be extracted directly from your reporting, Fortnox, shopify or google analytics
 
+### KPIs from Financial Data (`Article data fortnox...`)
+
+This file provides a high-level view of your product and category profitability.
+
+| KPI Name | What It Measures | Why It's Important | Columns to Use |
+| :--- | :--- | :--- | :--- |
+| **Gross Profit Margin** 📈 | The percentage of revenue left after the cost of goods sold (COGS). | It's the primary indicator of your core business profitability and pricing efficiency. | `Summa_SEK_inkl_rabatt`, `COGS` |
+| **Contribution Margin (TB)** 💰 | The amount each product contributes to covering fixed costs and generating profit. | It helps identify your most valuable products, guiding strategic focus. | `Name`, `Category`, `TB` |
+| **Sales by Revenue & Volume** 📊 | Which products and categories generate the most revenue and sell the most units. | Essential for inventory management and understanding your main revenue drivers. | `Name`, `Category`, `Summa_SEK_inkl_rabatt`, `Summa_Enheter` |
+
+***
+
+### KPIs from E-commerce Data (`Orders Data...`)
+
+This file provides a detailed look at individual customer transactions and sales activity.
+
+| KPI Name | What It Measures | Why It's Important | Columns to Use |
+| :--- | :--- | :--- | :--- |
+| **Average Order Value (AOV)** 🛒 | The average amount a customer spends in a single order. | Increasing AOV is a key lever for growing revenue without needing more traffic. | `Name` (as Order ID), `Total` |
+| **Top Selling Products** 🏆 | Which specific items are purchased most frequently and generate the most gross revenue. | It guides marketing efforts, website merchandising, and day-to-day inventory. | `Lineitem name`, `Lineitem quantity`, `Lineitem price` |
+| **Discount Performance** 🏷️ | The usage and total value of different discount codes. | Helps you understand which promotions are most popular with your customers. | `Discount Code`, `Discount Amount` |
 
 ---
+
+Of course. Assuming you have a standard e-commerce setup in Google Analytics (GA4), here is a table of the most valuable KPIs you can track.
+
+### KPIs from Google Analytics Data
+
+This data provides a comprehensive view of your website's **audience, user acquisition, and on-site behavior**.
+
+| KPI Name | What It Measures | Why It's Important | 
+| :--- | :--- | :--- | 
+| **Users / Sessions** 👥 | The number of unique visitors and total visits to your site. | It's the most fundamental measure of your website's reach and audience size. | 
+| **Traffic Acquisition** 🚦 | Which marketing channels (e.g., Organic Search, Paid Search, Social) are driving traffic to your site. | It tells you which marketing efforts are working, allowing you to optimize your budget and focus. | 
+| **Engagement Rate** 📈 | The percentage of sessions where a user was actively engaged (stayed \>10s, had a conversion, or viewed 2+ pages). | It's a key indicator of content quality and audience relevance. A low rate can signal a disconnect with visitors. | 
+| **E-commerce Conversion Rate** 🎯 | The percentage of sessions that result in a purchase. | This is the ultimate measure of your website's effectiveness at turning visitors into customers. | 
+| **Total Revenue** 💰 | The total monetary value of all purchases made through the website. | It's the bottom-line metric for measuring the direct financial success of your e-commerce channel. |
+| **Cost Per Acquisition (CPA)** 💸 | The average cost to acquire one paying customer from a specific marketing channel. | It directly connects marketing spend to results, helping you ensure your campaigns are profitable. | 
+
+
 
 ## Key A/B Testing Terms Explained
 
