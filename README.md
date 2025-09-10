@@ -292,6 +292,8 @@ It is the process where we define the business logic to intelligently connect, c
 
 ### 4.3 The Strategic Advantages of a Unified Data Model
 
+![the proposed prototype](/images/warehhouse.png)
+
 By consolidating and modeling your data, we transform it from a simple technical utility into a powerful strategic asset. This provides several key advantages for Lykke:
 
 **Unlock Deeper Insights:** You can finally answer critical, cross-functional questions:
@@ -342,6 +344,8 @@ Creating a unified dashboard requires an automated and secure method to pull dat
 An API can be understood as a dedicated waiter in a restaurant. Instead of entering the kitchen (a platform's complex internal system), a structured order for data is given to the waiter (the API). The waiter communicates with the kitchen and returns with the specific information requested. This provides a secure and standardized way for different software systems to exchange data.
 
 To communicate with these APIs, **connectors** are used. For popular platforms, pre-built, standard connectors are often available. For systems where a standard connector doesn't exist, a custom development is performed. 
+
+![description of connectors as part of the architecture](/images/connector.png)
 
 The general approach is to use available connectors wherever possible and build custom ones where necessary to link all required systems seamlessly.
 This is a summary of the data sources that Lykke uses:
